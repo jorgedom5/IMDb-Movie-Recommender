@@ -1,0 +1,62 @@
+body {
+    background-color: #000000;
+    color: #FFFF00;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+    color: #FFFF00;
+    text-shadow: 0 0 10px #FFFF00, 0 0 20px #FFFF00, 0 0 30px #FFFF00;
+}
+
+button {
+    background-color: #000000;
+    border: 2px solid #FFFF00;
+    color: #FFFF00;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+button:hover {
+    background-color: #FFFF00;
+    color: #000000;
+    border-color: #000000;
+}
+
+.data {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.data th, .data td {
+    border: 1px solid #FFFF00;
+    padding: 12px;
+    text-align: left;
+}
+
+.data th {
+    background-color: #000000;
+    color: #FFFF00;
+    text-shadow: 0 0 10px #FFFF00, 0 0 20px #FFFF00, 0 0 30px #FFFF00;
+}
+
+.data td {
+    background-color: #1A1A1A;
+    color: #FFFF00;
+    text-shadow: 0 0 5px #FFFF00;
+}
+
+.hidden {
+    display: none;
+}
+
+#predictButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
