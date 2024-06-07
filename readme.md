@@ -54,18 +54,40 @@ To upload your CSV file using CURL, use the following command:
 curl -X POST -F "file=@/path/to/your/file.csv" http://localhost:5000/upload
 ```
 
-## Preparing the CSV Files
+## Preparing the CSV File with Your Ratings
 
-### IMDb Ratings CSV
+IMDb allows users to download their ratings in CSV format. Here are the steps to do it:
 
-1.  Download IMDb ratings data and save it as `imdb_movies.csv`.
-2.  Ensure the CSV file has the necessary columns: `Original Title`, `Year`, `IMDb Rating`, and `Num Votes`.
-3.  Place the file in the `data/processed` directory.
+### Step 1: Log in to IMDb
 
-### User Ratings CSV
+1.  Open your web browser and go to [IMDb](https://www.imdb.com).
+2.  Log in with your IMDb account. If you don't have an account, sign up first.
 
-1.  Create your own ratings CSV file containing the columns `Original Title`, `Year`, `IMDb Rating`, and `Your Rating`.
-2.  Upload the file using the `/upload` endpoint as described above.
+### Step 2: Access Your User Profile
+
+1.  Once logged in, click on your username at the top right of the page.
+2.  From the dropdown menu, select "Your Ratings".
+
+### Step 3: Export Your Ratings
+
+1.  On the ratings page, look for the option to export your data. This is usually found at the top right of the ratings list.
+2.  Click on "Export this list".
+3.  A CSV file will be downloaded to your computer.
+
+### Step 4: Upload Your Ratings
+
+1.  Once you have the CSV file prepared and correctly formatted, you can upload it to the API using the following CURL command:
+    
+```bash
+curl -X POST -F "file=@/path/to/your/file.csv" http://localhost:5000/upload
+```
+    
+
+This will upload your ratings into the system and allow you to get personalized movie recommendations through the API.
+
+### Step 5: Verify the Upload
+
+If the upload is successful, you will receive a JSON response with a confirmation message. If there is any error, check the error messages and adjust your CSV file as necessary.
 
 ## Directory Structure
 
@@ -94,40 +116,5 @@ For more information on Docker and Docker Compose, refer to the official documen
 
 -   [Docker Documentation](https://docs.docker.com/)
 -   [Docker Compose Documentation](https://docs.docker.com/compose/)
-
-## Downloading Your Ratings from IMDb
-
-IMDb allows users to download their ratings in CSV format. Here are the steps to do it:
-
-### Step 1: Log in to IMDb
-
-1.  Open your web browser and go to [IMDb](https://www.imdb.com).
-2.  Log in with your IMDb account. If you don't have an account, sign up first.
-
-### Step 2: Access Your User Profile
-
-1.  Once logged in, click on your username at the top right of the page.
-2.  From the dropdown menu, select "Your Ratings".
-
-### Step 3: Export Your Ratings
-
-1.  On the ratings page, look for the option to export your data. This is usually found at the top right of the ratings list.
-2.  Click on "Export this list".
-3.  A CSV file named `ratings.csv` will be downloaded to your computer.
-
-### Step 4: Upload Your Ratings
-
-1.  Once you have the CSV file prepared and correctly formatted, you can upload it to the API using the following CURL command:
-    
-```bash
-curl -X POST -F "file=@/path/to/your/file.csv" http://localhost:5000/upload
-```
-    
-
-This will upload your ratings into the system and allow you to get personalized movie recommendations through the API.
-
-### Step 5: Verify the Upload
-
-If the upload is successful, you will receive a JSON response with a confirmation message. If there is any error, check the error messages and adjust your CSV file as necessary.
 
 Enjoy your movie recommendations!
